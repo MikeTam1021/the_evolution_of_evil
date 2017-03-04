@@ -1,7 +1,7 @@
 Your Game Title
 ===============
 
-Entry in PyWeek #23  <http://www.pyweek.org/12/>
+Entry in PyWeek #23  <http://www.pyweek.org/23/>
 URL: http://pyweek.org/e/The Evolution of Evil
 Team: Unicorn Markets 
 Members: Mike Tamillow 
@@ -15,17 +15,13 @@ On Windows or Mac OS X, locate the "run_game.pyw" file and double-click it.
 
 Othewise open a terminal / console and "cd" to the game directory and run:
 
-  python run_game.py
+  python evolution_of_evil.py
 
 
 How to Play the Game
 --------------------
 
-
-
-Move the cursor around the screen with the mouse.
-
-Press the left mouse button to fire the ducks.
+Run away from the enemies
 
 
 Development notes 

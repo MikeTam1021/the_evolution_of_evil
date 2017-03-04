@@ -1,1 +1,5 @@
-Licence: short_licence
+Licence: Liability to the user
+
+This is my game. Steal at your own risk!
+
+Mike Tamillow
