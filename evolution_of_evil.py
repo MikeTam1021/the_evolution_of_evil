@@ -115,8 +115,8 @@ class Game(object):
                 self.state += 1
                 self.state_init = True
                 self.demon_count = 0
-                pygame.time.set_timer(MAKEENEMY, 0)
-                pygame.time.set_timer(MAKEENEMY, 3500 - (500 * self.state))
+                if self.state != 9:
+                    pygame.time.set_timer(MAKEENEMY, 3500 - (500 * self.state))
                 self.start = pygame.time.get_ticks()
                 self.load_music_background()
                 if self.state == 5:
@@ -149,6 +149,7 @@ class Game(object):
                     self.victory = False
                     self.is_dead = False
                     self.demon_count = 0
+                    pygame.time.set_timer(MAKEENEMY, 0)
                     pygame.time.set_timer(SWITCHLEVEL, 40000)
                     self.player = Player(self.sprites)
 
