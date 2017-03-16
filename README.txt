@@ -22,3 +22,8 @@ How to Play the Game
 
 Run away from the enemies
 
+Spacebar will restart if you die or win.
+
+q to quit the game.
+
+arrow keys to move.

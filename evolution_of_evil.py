@@ -25,8 +25,8 @@ class Enemy(pygame.sprite.Sprite):
 
         #make enemies dance around the screen like poolballs
 
-        self.rect.x += self.x_direction * 60 * game.dt * (game.state + 2)
-        self.rect.y += self.y_direction * 60 * game.dt * (game.state + 2)
+        self.rect.x += self.x_direction * 20 * game.dt * (game.state + 10)
+        self.rect.y += self.y_direction * 20 * game.dt * (game.state + 10)
         if self.rect.x <= 0:
             self.x_direction = -self.x_direction
         if self.rect.x >= 770:
@@ -88,7 +88,7 @@ class Game(object):
         self.dt = self.clock.tick(30) / 1000.0 # this is a measure in milliseconds
                                           # events are a function of gametime
         self.enemies = pygame.sprite.Group()
-        self.create_user_events()
+        pygame.time.set_timer(SWITCHLEVEL, 40000)
         self.is_dead = False
 
 
@@ -116,7 +116,7 @@ class Game(object):
                 self.state_init = True
                 self.demon_count = 0
                 pygame.time.set_timer(MAKEENEMY, 0)
-                pygame.time.set_timer(MAKEENEMY, 4500 / self.state)
+                pygame.time.set_timer(MAKEENEMY, 3500 - (500 * self.state))
                 self.start = pygame.time.get_ticks()
                 self.load_music_background()
                 if self.state == 5:
@@ -149,13 +149,8 @@ class Game(object):
                     self.victory = False
                     self.is_dead = False
                     self.demon_count = 0
-                    self.create_user_events()
+                    pygame.time.set_timer(SWITCHLEVEL, 40000)
                     self.player = Player(self.sprites)
-
-    def create_user_events(self):
-
-        pygame.time.set_timer(MAKEENEMY, 3000)
-        pygame.time.set_timer(SWITCHLEVEL, 40000)
 
     def text_view(self, message):
         self.screen.fill((0, 0, 0))
